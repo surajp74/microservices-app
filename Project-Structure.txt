@@ -1,0 +1,45 @@
+microservices-app/
+├── auth-service/
+│   ├── Dockerfile
+│   ├── app.js
+│   └── package.json
+├── product-service/
+│   ├── Dockerfile
+│   ├── app.js
+│   └── package.json
+├── frontend/
+│   ├── Dockerfile
+│   ├── index.js
+│   └── package.json
+├── helm/
+│   ├── auth-chart/
+│   │   ├── Chart.yaml
+│   │   ├── values.yaml
+│   │   └── templates/
+│   │       ├── deployment.yaml
+│   │       ├── service.yaml
+│   │       └── hpa.yaml
+│   ├── product-chart/
+│   │   ├── Chart.yaml
+│   │   ├── values.yaml
+│   │   └── templates/
+│   │       ├── deployment.yaml
+│   │       ├── service.yaml
+│   │       └── hpa.yaml
+│   └── frontend-chart/
+│       ├── Chart.yaml
+│       ├── values.yaml
+│       └── templates/
+│           ├── deployment.yaml
+│           ├── service.yaml
+│           └── hpa.yaml
+├── terraform/
+│   ├── main.tf
+│   └── variables.tf
+├── manifests/
+│   ├── prometheus-values.yaml
+│   └── grafana-values.yaml
+└── azure-pipelines/
+    ├── auth-pipeline.yml
+    ├── product-pipeline.yml
+    └── frontend-pipeline.yml

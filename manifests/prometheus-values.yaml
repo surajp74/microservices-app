@@ -1,0 +1,32 @@
+alertmanager:
+  enabled: false
+
+pushgateway:
+  enabled: false
+
+server:
+  service:
+    type: NodePort
+    nodePort: 30090
+
+  global:
+    scrape_interval: 15s
+
+  resources:
+    limits:
+      memory: 256Mi
+      cpu: 200m
+    requests:
+      memory: 128Mi
+      cpu: 100m
+
+  extraScrapeConfigs:
+    - job_name: 'auth-service'
+      static_configs:
+        - targets: ['auth.microservices.svc.cluster.local:3000']
+    - job_name: 'product-service'
+      static_configs:
+        - targets: ['product.microservices.svc.cluster.local:3001']
+    - job_name: 'frontend'
+      static_configs:
+        - targets: ['frontend.microservices.svc.cluster.local:3002']
