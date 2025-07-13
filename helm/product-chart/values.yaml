@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: surajpatil7438/product-service
+  repository: surajpatil7438/product-services
   tag: 1.1
   pullPolicy: IfNotPresent
 
